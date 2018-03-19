@@ -25,6 +25,21 @@ namespace Dll
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
+        public void X1()
+        {
+            X2();
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public void X2()
+        {
+            if (IsOutOfBounds(1, 1, this.C))
+            {
+                ThrowHelper.ThrowIndexOutOfRangeException("");
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public void RunThrowDirect(int a, int b)
         {
             //NO rep stos

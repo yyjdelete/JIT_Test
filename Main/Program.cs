@@ -1,4 +1,6 @@
-﻿using Dll;
+﻿#define TEST
+
+using Dll;
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -21,6 +23,8 @@ namespace tmp
             Run61();
 
 #if TEST
+            SimpleTime(test.X1, nameof(test.X1));
+            SimpleTime(test.X2, nameof(test.X2));
             SimpleTime(Run1, nameof(Run1));
             SimpleTime(Run2, nameof(Run2));
             SimpleTime(Run4, nameof(Run4));
